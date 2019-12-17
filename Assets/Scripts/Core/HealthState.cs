@@ -1,39 +1,24 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class HealthState : MonoBehaviour
 {
-    [System.Serializable]
-    public class DestroyEvent : UnityEvent<float>
-    {
-    }
-
     [SerializeField]
-    private float maxHealth;
-
-    private float health;
-
-    public DestroyEvent destroyEvent;
+    private int maxHealth = 100;
+    private int health;
 
     private void Start()
     {
         health = maxHealth;
     }
 
-    public void SetMaxHealth(float maxHealth)
-    {
-        this.maxHealth = maxHealth;
-        health = maxHealth;
-    }
+    public void Heal(int healAmount) => health = Mathf.Min(health + healAmount, maxHealth);
 
-    public void ApplyDamage(float damage)
+    public void ApplyDamage(int damage)
     {
         health -= damage;
-
-        if (health <= 0.01f)
+        if (health <= 0)
         {
-
+            Destroy(gameObject);
         }   
     }
 }

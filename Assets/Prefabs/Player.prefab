@@ -719,7 +719,7 @@ GameObject:
   - component: {fileID: 735857714}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  lookSensitivity: 3
+  lookSensitivity: 1
 --- !u!114 &3826419669666712095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,8 +780,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf31053bcc9f294c81b9c75456aa7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
   fpsCamera: {fileID: 3826419671239807860}
+  weaponAttribute:
+    damage: 10
+    fireRate: 2
+    distance: 100
 --- !u!136 &3826419669666712093
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -905,6 +908,7 @@ GameObject:
   - component: {fileID: 3826419670354164338}
   - component: {fileID: 3826419670354164339}
   - component: {fileID: 3826419670354164348}
+  - component: {fileID: 1085478491}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -994,6 +998,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1085478491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826419670354164349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb974e4eeb7c20419b18a10c77ff363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
 --- !u!1 &3826419670915138485
 GameObject:
   m_ObjectHideFlags: 0
