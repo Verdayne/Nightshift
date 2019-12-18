@@ -30,7 +30,7 @@ public class Spawn : MonoBehaviour
     {
         var spawnPoint = spawnPoints[Random.Range(0, 3)];
         var agent = Instantiate(objectToSpawn, spawnPoint.position, Quaternion.identity);
-        var mind = agent.GetComponent<WalkToAI>();
+        var mind = agent.GetComponent<AI>();
         mind.Target = target.transform;
     }
 }

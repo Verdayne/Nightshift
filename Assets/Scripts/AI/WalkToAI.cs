@@ -2,7 +2,7 @@
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class WalkTo : MonoBehaviour
+public class WalkToAI : MonoBehaviour
 {
     public Transform Target {set; get;}
     private NavMeshAgent agent;
